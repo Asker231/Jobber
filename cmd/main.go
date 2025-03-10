@@ -4,7 +4,7 @@ import (
 
 
 	"github.com/Asker231/Jobber.git/internal/home"
-	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {

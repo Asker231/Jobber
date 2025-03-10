@@ -1,6 +1,10 @@
 package home
 
-import "github.com/gofiber/fiber/v3"
+import (
+	"github.com/Asker231/Jobber.git/pkg/tadapter"
+	view "github.com/Asker231/Jobber.git/view/components"
+	"github.com/gofiber/fiber/v2"
+)
 
 
 type HomeHandler struct{
@@ -11,6 +15,7 @@ func NewHomeHandler(router *fiber.App){
 	router.Get("/",h.Hello)
 }
 
-func(h *HomeHandler)Hello(ctx fiber.Ctx)error{
-	return ctx.SendString("Hello go")
+func(h *HomeHandler)Hello(ctx *fiber.Ctx)error{
+	component := view.Main()
+	return tadapter.Render(ctx,component)
 }
